@@ -8,7 +8,8 @@ const ProfileCard = ({ location }) => {
     const { user } = useSelector((state)=>state.authReducer.authData)
     const posts = useSelector((state)=>state.postReducer.posts)
     const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
-
+    
+    
 
   return (
     <div className="ProfileCard">
@@ -29,7 +30,7 @@ const ProfileCard = ({ location }) => {
         </div>
         <div className="ProfileName">
             <span>{user.firstname} {user.lastname}</span>
-            <span>{user.worksAt? user.worksAt : "hululu"}</span>
+            <span>{user.worksAt? user.worksAt : ""}</span>
         </div>
 
         <div className="followStatus">
