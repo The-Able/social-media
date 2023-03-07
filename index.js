@@ -14,8 +14,8 @@ const app = express();
 dotenv.config();
 
 // to serve images for public
-app.use(express.static('public')); 
-app.use('/images', express.static('images'));
+// app.use(express.static('public')); 
+// app.use('/images', express.static('images'));
 
 //Middleware
 app.use(bodyParser.json({limit: '30mb', extended: true}));
@@ -38,12 +38,12 @@ mongoose.connect(CONNECTION_URL, {
 })
 
 //Routes
-app.use('/auth', AuthRoute)
-app.use('/user', UserRoute)
-app.use('/posts', PostRoute)
-app.use('/upload', UploadRoute)
-app.use('/chat', ChatRoute)
-app.use('/message', MessageRoute)
+app.use('/api/v1/auth', AuthRoute)
+app.use('/api/v1/user', UserRoute)
+app.use('/api/v1/posts', PostRoute)
+app.use('/api/v1/upload', UploadRoute)
+app.use('/api/v1/chat', ChatRoute)
+app.use('/api/v1/message', MessageRoute)
 
 
 
